@@ -36,21 +36,6 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <key>CFBundleURLTypes</key>
-    <array>
-        <dict>
-            <key>CFBundleURLSchemes</key>
-            <array>
-                <string>fb906677606093876</string>
-            </array>
-        </dict>
-    </array>
-    
-    <key>FacebookAppID</key>
-    <string>906677606093876</string>
-    <key>FacebookDisplayName</key>
-    <string>Real Friends?</string>
-
     <key>NSAppTransportSecurity</key>
     <dict>
         <key>NSExceptionDomains</key>
@@ -78,5 +63,18 @@
             </dict>
         </dict>
     </dict>
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>fb906677606093876</string>
+            </array>
+        </dict>
+    </array>
+    <key>FacebookAppID</key>
+    <string>906677606093876</string>
+    <key>FacebookDisplayName</key>
+    <string>Real Friends?</string>
 </dict>
 </plist>
