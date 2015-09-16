@@ -38,9 +38,11 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         
         if (error == nil){
             //TODO: login complete
+            print("1")
         }
         else{
             //TODO: error
+            print("2")
             // error = error.localizedDescription
         }
         
