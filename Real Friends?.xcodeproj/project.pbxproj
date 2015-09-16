@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E25A393A1BA9B173003B8416 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E25A39371BA9B173003B8416 /* FBSDKCoreKit.framework */; };
+		E25A393B1BA9B173003B8416 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E25A39381BA9B173003B8416 /* FBSDKLoginKit.framework */; };
+		E25A393C1BA9B173003B8416 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E25A39391BA9B173003B8416 /* FBSDKShareKit.framework */; };
 		E2B09F501BA8A853007D1EFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B09F4F1BA8A853007D1EFC /* AppDelegate.swift */; };
 		E2B09F521BA8A853007D1EFC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B09F511BA8A853007D1EFC /* ViewController.swift */; };
 		E2B09F551BA8A853007D1EFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2B09F531BA8A853007D1EFC /* Main.storyboard */; };
@@ -14,9 +17,6 @@
 		E2B09F5A1BA8A853007D1EFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2B09F581BA8A853007D1EFC /* LaunchScreen.storyboard */; };
 		E2B09F651BA8A853007D1EFC /* Real_Friends_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B09F641BA8A853007D1EFC /* Real_Friends_Tests.swift */; };
 		E2B09F701BA8A853007D1EFC /* Real_Friends_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B09F6F1BA8A853007D1EFC /* Real_Friends_UITests.swift */; };
-		E2B09F801BA8AEEE007D1EFC /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2B09F7F1BA8AEEE007D1EFC /* FBSDKLoginKit.framework */; };
-		E2B09F821BA8AEFC007D1EFC /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2B09F811BA8AEFC007D1EFC /* FBSDKShareKit.framework */; };
-		E2B09F881BA9A8C8007D1EFC /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2B09F851BA9A8C8007D1EFC /* FBSDKCoreKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E25A39371BA9B173003B8416 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		E25A39381BA9B173003B8416 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		E25A39391BA9B173003B8416 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		E2B09F4C1BA8A853007D1EFC /* Real Friends?.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Real Friends?.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2B09F4F1BA8A853007D1EFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2B09F511BA8A853007D1EFC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -50,9 +53,6 @@
 		E2B09F6B1BA8A853007D1EFC /* Real Friends?UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Real Friends?UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2B09F6F1BA8A853007D1EFC /* Real_Friends_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Real_Friends_UITests.swift; sourceTree = "<group>"; };
 		E2B09F711BA8A853007D1EFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E2B09F7F1BA8AEEE007D1EFC /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
-		E2B09F811BA8AEFC007D1EFC /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
-		E2B09F851BA9A8C8007D1EFC /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +60,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2B09F801BA8AEEE007D1EFC /* FBSDKLoginKit.framework in Frameworks */,
-				E2B09F881BA9A8C8007D1EFC /* FBSDKCoreKit.framework in Frameworks */,
-				E2B09F821BA8AEFC007D1EFC /* FBSDKShareKit.framework in Frameworks */,
+				E25A393B1BA9B173003B8416 /* FBSDKLoginKit.framework in Frameworks */,
+				E25A393A1BA9B173003B8416 /* FBSDKCoreKit.framework in Frameworks */,
+				E25A393C1BA9B173003B8416 /* FBSDKShareKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,9 +86,9 @@
 		E2B09F431BA8A852007D1EFC = {
 			isa = PBXGroup;
 			children = (
-				E2B09F811BA8AEFC007D1EFC /* FBSDKShareKit.framework */,
-				E2B09F7F1BA8AEEE007D1EFC /* FBSDKLoginKit.framework */,
-				E2B09F851BA9A8C8007D1EFC /* FBSDKCoreKit.framework */,
+				E25A39371BA9B173003B8416 /* FBSDKCoreKit.framework */,
+				E25A39381BA9B173003B8416 /* FBSDKLoginKit.framework */,
+				E25A39391BA9B173003B8416 /* FBSDKShareKit.framework */,
 				E2B09F4E1BA8A853007D1EFC /* Real Friends? */,
 				E2B09F631BA8A853007D1EFC /* Real Friends?Tests */,
 				E2B09F6E1BA8A853007D1EFC /* Real Friends?UITests */,
