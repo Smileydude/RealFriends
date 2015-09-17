@@ -30,6 +30,12 @@ class MainMenuViewController: UIViewController {
         loginManager.logOut()
         
         //switch to login naviagtor
+        changeNavLogin()
+        
+    }
+    
+    func changeNavLogin(){
+        
         let loginPage = self.storyboard?.instantiateViewControllerWithIdentifier("LoginPage") as! ViewController
         
         let loginPageNavigationController = UINavigationController (rootViewController: loginPage)
@@ -37,7 +43,6 @@ class MainMenuViewController: UIViewController {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         appDelegate.window?.rootViewController = loginPageNavigationController
-        
     }
 
     /*

@@ -11,6 +11,7 @@
 		E25A393B1BA9B173003B8416 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E25A39381BA9B173003B8416 /* FBSDKLoginKit.framework */; };
 		E25A393C1BA9B173003B8416 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E25A39391BA9B173003B8416 /* FBSDKShareKit.framework */; };
 		E2A653611BAB129B003E8203 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A653601BAB129B003E8203 /* MainMenuViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		E2A653651BAB3578003E8203 /* NavControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A653641BAB3578003E8203 /* NavControl.swift */; settings = {ASSET_TAGS = (); }; };
 		E2B09F501BA8A853007D1EFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B09F4F1BA8A853007D1EFC /* AppDelegate.swift */; };
 		E2B09F521BA8A853007D1EFC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B09F511BA8A853007D1EFC /* ViewController.swift */; };
 		E2B09F551BA8A853007D1EFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2B09F531BA8A853007D1EFC /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 		E25A39381BA9B173003B8416 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		E25A39391BA9B173003B8416 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		E2A653601BAB129B003E8203 /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainMenuViewController.swift; path = ../MainMenuViewController.swift; sourceTree = "<group>"; };
+		E2A653641BAB3578003E8203 /* NavControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavControl.swift; path = ../NavControl.swift; sourceTree = "<group>"; };
 		E2B09F4C1BA8A853007D1EFC /* Real Friends?.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Real Friends?.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2B09F4F1BA8A853007D1EFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2B09F511BA8A853007D1EFC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				E2A653601BAB129B003E8203 /* MainMenuViewController.swift */,
 				E2B09F4F1BA8A853007D1EFC /* AppDelegate.swift */,
 				E2B09F511BA8A853007D1EFC /* ViewController.swift */,
+				E2A653641BAB3578003E8203 /* NavControl.swift */,
 				E2B09F531BA8A853007D1EFC /* Main.storyboard */,
 				E2B09F561BA8A853007D1EFC /* Assets.xcassets */,
 				E2B09F581BA8A853007D1EFC /* LaunchScreen.storyboard */,
@@ -271,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2A653611BAB129B003E8203 /* MainMenuViewController.swift in Sources */,
+				E2A653651BAB3578003E8203 /* NavControl.swift in Sources */,
 				E2B09F521BA8A853007D1EFC /* ViewController.swift in Sources */,
 				E2B09F501BA8A853007D1EFC /* AppDelegate.swift in Sources */,
 			);

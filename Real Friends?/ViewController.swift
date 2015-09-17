@@ -9,6 +9,7 @@
 import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
+import NavControl.swift
 
 class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     @IBOutlet weak var LoginButton: FBSDKLoginButton!
@@ -29,14 +30,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     override func viewWillAppear(animated: Bool) {
         if (FBSDKAccessToken.currentAccessToken() != nil)
         {
-            //changeNav("MainMenu", MainMenuViewController)
-            let mainMenu = self.storyboard?.instantiateViewControllerWithIdentifier("MainMenu") as! MainMenuViewController
-            
-            let mainMenuNavigationController = UINavigationController (rootViewController: mainMenu)
-            
-            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-            
-            appDelegate.window?.rootViewController = mainMenuNavigationController
+            changeNavMainMenu()
         }
     }
     
@@ -53,20 +47,14 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
             print("Token =\(FBSDKAccessToken.currentAccessToken().tokenString)")
             print("User ID =\(FBSDKAccessToken.currentAccessToken().userID)")
             
-            let mainMenu = self.storyboard?.instantiateViewControllerWithIdentifier("MainMenu") as! MainMenuViewController
-            
-            let mainMenuNavigationController = UINavigationController (rootViewController: mainMenu)
-            
-            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-            
-            appDelegate.window?.rootViewController = mainMenuNavigationController
+            changeNavMainMenu()
             
         }
         
     }
     
     
-    func changeNav(ViewID: String, Controller: ViewController){
+    func changeNavMainMenu(){
         
         let mainMenu = self.storyboard?.instantiateViewControllerWithIdentifier("MainMenu") as! MainMenuViewController
         
@@ -75,7 +63,6 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         appDelegate.window?.rootViewController = mainMenuNavigationController
-
         
     }
     
