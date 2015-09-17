@@ -10,6 +10,7 @@
 		E25A393A1BA9B173003B8416 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E25A39371BA9B173003B8416 /* FBSDKCoreKit.framework */; };
 		E25A393B1BA9B173003B8416 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E25A39381BA9B173003B8416 /* FBSDKLoginKit.framework */; };
 		E25A393C1BA9B173003B8416 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E25A39391BA9B173003B8416 /* FBSDKShareKit.framework */; };
+		E2A653611BAB129B003E8203 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A653601BAB129B003E8203 /* MainMenuViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		E2B09F501BA8A853007D1EFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B09F4F1BA8A853007D1EFC /* AppDelegate.swift */; };
 		E2B09F521BA8A853007D1EFC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B09F511BA8A853007D1EFC /* ViewController.swift */; };
 		E2B09F551BA8A853007D1EFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2B09F531BA8A853007D1EFC /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 		E25A39371BA9B173003B8416 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		E25A39381BA9B173003B8416 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		E25A39391BA9B173003B8416 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		E2A653601BAB129B003E8203 /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainMenuViewController.swift; path = ../MainMenuViewController.swift; sourceTree = "<group>"; };
 		E2B09F4C1BA8A853007D1EFC /* Real Friends?.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Real Friends?.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2B09F4F1BA8A853007D1EFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2B09F511BA8A853007D1EFC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 		E2B09F4E1BA8A853007D1EFC /* Real Friends? */ = {
 			isa = PBXGroup;
 			children = (
+				E2A653601BAB129B003E8203 /* MainMenuViewController.swift */,
 				E2B09F4F1BA8A853007D1EFC /* AppDelegate.swift */,
 				E2B09F511BA8A853007D1EFC /* ViewController.swift */,
 				E2B09F531BA8A853007D1EFC /* Main.storyboard */,
@@ -267,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2A653611BAB129B003E8203 /* MainMenuViewController.swift in Sources */,
 				E2B09F521BA8A853007D1EFC /* ViewController.swift in Sources */,
 				E2B09F501BA8A853007D1EFC /* AppDelegate.swift in Sources */,
 			);
@@ -359,7 +363,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -397,7 +401,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

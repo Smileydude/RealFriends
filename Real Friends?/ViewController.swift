@@ -11,39 +11,50 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 
 class ViewController: UIViewController, FBSDKLoginButtonDelegate {
+    @IBOutlet weak var LoginButton: FBSDKLoginButton!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        if (FBSDKAccessToken.currentAccessToken() == nil){
-            //TODO: Not Logged In
+        if (FBSDKAccessToken.currentAccessToken() == nil)
+        {
+            //user not logged in
         }
-        else{
-            //TODO: Logged In
-            self.performSegueWithIdentifier("ShowNew", sender: self)
+        else
+        {
+            // User is already logged in
         }
         
-        let loginButton = FBSDKLoginButton()
-        loginButton.readPermissions = ["public_profile", "email", "user_friends"]
-        loginButton.center = self.view.center
         
-        loginButton.delegate = self
+        LoginButton.delegate = self
+        LoginButton.readPermissions = ["public_profile", "email", "user_friends"]
         
-        self.view.addSubview(loginButton)
+        
         
     }
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
         
-        if (error == nil){
-            //TODO: login complete
-            print("1")
+        if (error != nil){
+            print(error.localizedDescription)
+            return
         }
-        else{
-            //TODO: error
-            print("2")
-            // error = error.localizedDescription
+        if let userToken = result.token
+        {
+            let token:FBSDKAccessToken = result.token
+            print("Token =\(FBSDKAccessToken.currentAccessToken().tokenString)")
+            print("User ID =\(FBSDKAccessToken.currentAccessToken().userID)")
+            
+            let mainMenu = self.storyboard?.instantiateViewControllerWithIdentifier("MainMenu") as! MainMenuViewController
+            
+            let mainMenuNavigationController = UINavigationController (rootViewController: mainMenu)
+            
+            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            
+            appDelegate.window?.rootViewController = mainMenuNavigationController
+            
         }
         
     }
