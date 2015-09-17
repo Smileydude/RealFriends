@@ -9,7 +9,6 @@
 import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
-import NavControl.swift
 
 class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     @IBOutlet weak var LoginButton: FBSDKLoginButton!
@@ -41,14 +40,9 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
             print(error.localizedDescription)
             return
         }
-        if let userToken = result.token
+        if let _ = result.token
         {
-            let token:FBSDKAccessToken = result.token
-            print("Token =\(FBSDKAccessToken.currentAccessToken().tokenString)")
-            print("User ID =\(FBSDKAccessToken.currentAccessToken().userID)")
-            
-            changeNavMainMenu()
-            
+            changeNavMainMenu()   
         }
         
     }

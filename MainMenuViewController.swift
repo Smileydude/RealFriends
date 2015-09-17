@@ -11,10 +11,92 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 
 class MainMenuViewController: UIViewController {
+    var facebookid: NSString = ""
+    var userName: NSString = ""
+    var userEmail: NSString = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        var requestParameters = ["fields": "id, email, first_name, last_name"]
+        
+        let userDetails = FBSDKGraphRequest(graphPath: "me", parameters: requestParameters)
+        
+        userDetails.startWithCompletionHandler { (connection, result, error:NSError!) -> Void in
+            
+            if(error != nil)
+            {
+                print("\(error.localizedDescription)")
+                return
+            }
+            
+            if(result != nil)
+            {
+                
+                let userId:String = result["id"] as! String
+                let userFirstName:String? = result["first_name"] as? String
+                let userLastName:String? = result["last_name"] as? String
+                let userEmail:String? = result["email"] as? String
+                
+                
+                print("\(userEmail)")
+                
+                let myUser:PFUser = PFUser.currentUser()!
+                
+                // Save first name
+                if(userFirstName != nil)
+                {
+                    myUser.setObject(userFirstName!, forKey: "first_name")
+                    
+                }
+                
+                //Save last name
+                if(userLastName != nil)
+                {
+                    myUser.setObject(userLastName!, forKey: "last_name")
+                }
+                
+                // Save email address
+                if(userEmail != nil)
+                {
+                    myUser.setObject(userEmail!, forKey: "email")
+                }
+                
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+                    
+                    // Get Facebook profile picture
+                    var userProfile = "https://graph.facebook.com/" + userId + "/picture?type=large"
+                    
+                    let profilePictureUrl = NSURL(string: userProfile)
+                    
+                    let profilePictureData = NSData(contentsOfURL: profilePictureUrl!)
+                    
+                    if(profilePictureData != nil)
+                    {
+                        let profileFileObject = PFFile(data:profilePictureData!)
+                        myUser.setObject(profileFileObject, forKey: "profile_picture")
+                    }
+                    
+                    
+                    myUser.saveInBackgroundWithBlock({ (success:Bool, error:NSError?) -> Void in
+                        
+                        if(success)
+                        {
+                            println("User details are now updated")
+                        }
+                        
+                    })
+                    
+                }
+                
+            }
+            
+        }
+        
+        print("\(self.facebookid)")
+        print("\(self.userName)")
+        print("\(self.userEmail)")
+        print("test")
         // Do any additional setup after loading the view.
     }
 
