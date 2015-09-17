@@ -2,12 +2,13 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="SG0-ZL-ht6">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Login-->
+        <!--LoginPage-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="LoginView" title="Login" id="BYZ-38-t0r" customClass="ViewController" customModule="Real_Friends_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginPage" title="LoginPage" id="BYZ-38-t0r" customClass="ViewController" customModule="Real_Friends_" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -60,7 +61,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Koz-yG-wpy">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SG0-ZL-ht6" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LoginPageNavigator" automaticallyAdjustsScrollViewInsets="NO" id="SG0-ZL-ht6" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Zh6-zG-vSo">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -85,13 +86,44 @@
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fBU-RR-8Nx">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5Y-up-VZ0">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="LogOut"/>
+                                <connections>
+                                    <action selector="logOutButtonTapped:" destination="M7h-q1-9HP" eventType="touchUpInside" id="qEN-wx-gyU"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="c5Y-up-VZ0" secondAttribute="trailing" constant="10" id="HtK-Ym-4S1"/>
+                            <constraint firstItem="c5Y-up-VZ0" firstAttribute="top" secondItem="FOf-G3-c1o" secondAttribute="bottom" constant="20" id="uY0-hT-ClR"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="c5Y-up-VZ0"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="HtK-Ym-4S1"/>
+                                <exclude reference="uY0-hT-ClR"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="c5Y-up-VZ0"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="HtK-Ym-4S1"/>
+                                <include reference="uY0-hT-ClR"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Main Menu" id="wHW-0u-2je"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nCG-VF-LGk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1246.5" y="1064.25"/>
+            <point key="canvasLocation" x="328.5" y="1442.25"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xIL-Ms-bcs">
@@ -109,7 +141,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8zF-dA-vvC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="328.5" y="1064.25"/>
+            <point key="canvasLocation" x="-565.5" y="1442.25"/>
         </scene>
     </scenes>
 </document>

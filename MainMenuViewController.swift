@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FBSDKCoreKit
+import FBSDKLoginKit
 
 class MainMenuViewController: UIViewController {
 
@@ -21,6 +23,22 @@ class MainMenuViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func logOutButtonTapped(sender: AnyObject) {
+        
+        let loginManager = FBSDKLoginManager()
+        
+        loginManager.logOut()
+        
+        //switch to login naviagtor
+        let loginPage = self.storyboard?.instantiateViewControllerWithIdentifier("LoginPage") as! ViewController
+        
+        let loginPageNavigationController = UINavigationController (rootViewController: loginPage)
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        appDelegate.window?.rootViewController = loginPageNavigationController
+        
+    }
 
     /*
     // MARK: - Navigation
