@@ -42,7 +42,9 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         }
         if let _ = result.token
         {
-            changeNavMainMenu()   
+            
+            changeNavMainMenu()
+            
         }
         
     }

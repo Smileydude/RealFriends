@@ -85,6 +85,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Kav-5H-bWD"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fBU-RR-8Nx">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5Y-up-VZ0">
@@ -94,32 +95,95 @@
                                     <action selector="logOutButtonTapped:" destination="M7h-q1-9HP" eventType="touchUpInside" id="qEN-wx-gyU"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LastName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qrY-yS-sPc">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ofo-bO-QYz" customClass="FBSDKProfilePictureView">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="Y70-hu-07b"/>
+                                    <constraint firstAttribute="height" constant="128" id="m60-F4-X0l">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="240"/>
+                                    </constraint>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Y70-hu-07b"/>
+                                        <exclude reference="m60-F4-X0l"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Y70-hu-07b"/>
+                                        <include reference="m60-F4-X0l"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WrF-Pb-bui">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="c5Y-up-VZ0" secondAttribute="trailing" constant="10" id="HtK-Ym-4S1"/>
+                            <constraint firstItem="WrF-Pb-bui" firstAttribute="centerX" secondItem="fBU-RR-8Nx" secondAttribute="centerX" id="6rN-Zw-7Jt"/>
+                            <constraint firstItem="WrF-Pb-bui" firstAttribute="top" secondItem="ofo-bO-QYz" secondAttribute="bottom" constant="8" id="Hhi-QR-68E"/>
+                            <constraint firstItem="qrY-yS-sPc" firstAttribute="centerX" secondItem="fBU-RR-8Nx" secondAttribute="centerX" id="M69-pn-CiO"/>
+                            <constraint firstItem="ofo-bO-QYz" firstAttribute="centerX" secondItem="fBU-RR-8Nx" secondAttribute="centerX" id="c1M-Or-6WE"/>
+                            <constraint firstItem="qrY-yS-sPc" firstAttribute="top" secondItem="WrF-Pb-bui" secondAttribute="bottom" constant="8" id="hFi-r6-cUm"/>
+                            <constraint firstItem="ofo-bO-QYz" firstAttribute="top" secondItem="FOf-G3-c1o" secondAttribute="bottom" constant="71" id="lO9-Wo-6Ed"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="c5Y-up-VZ0" secondAttribute="trailing" constant="10" id="uEV-Ld-wfU"/>
                             <constraint firstItem="c5Y-up-VZ0" firstAttribute="top" secondItem="FOf-G3-c1o" secondAttribute="bottom" constant="20" id="uY0-hT-ClR"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="c5Y-up-VZ0"/>
+                                <exclude reference="qrY-yS-sPc"/>
+                                <exclude reference="ofo-bO-QYz"/>
+                                <exclude reference="WrF-Pb-bui"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="HtK-Ym-4S1"/>
+                                <exclude reference="c1M-Or-6WE"/>
+                                <exclude reference="lO9-Wo-6Ed"/>
+                                <exclude reference="6rN-Zw-7Jt"/>
+                                <exclude reference="Hhi-QR-68E"/>
+                                <exclude reference="uEV-Ld-wfU"/>
                                 <exclude reference="uY0-hT-ClR"/>
+                                <exclude reference="M69-pn-CiO"/>
+                                <exclude reference="hFi-r6-cUm"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="c5Y-up-VZ0"/>
+                                <include reference="qrY-yS-sPc"/>
+                                <include reference="ofo-bO-QYz"/>
+                                <include reference="WrF-Pb-bui"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="HtK-Ym-4S1"/>
+                                <include reference="c1M-Or-6WE"/>
+                                <include reference="lO9-Wo-6Ed"/>
+                                <include reference="6rN-Zw-7Jt"/>
+                                <include reference="Hhi-QR-68E"/>
+                                <include reference="uEV-Ld-wfU"/>
                                 <include reference="uY0-hT-ClR"/>
+                                <include reference="M69-pn-CiO"/>
+                                <include reference="hFi-r6-cUm"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Main Menu" id="wHW-0u-2je"/>
+                    <connections>
+                        <outlet property="firstName" destination="WrF-Pb-bui" id="uql-wt-9cq"/>
+                        <outlet property="lastName" destination="qrY-yS-sPc" id="dWx-Gd-D5v"/>
+                        <outlet property="profilePic" destination="ofo-bO-QYz" id="WbM-eR-URs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nCG-VF-LGk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
