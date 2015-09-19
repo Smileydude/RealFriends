@@ -11,55 +11,111 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 
 class MainGameViewController: UIViewController {
-
+    
+    var friends:[person] = []
+    var data: NSData?
+    @IBOutlet weak var profilePic: UIImageView!
+    
+    @IBOutlet weak var Button1: UIButton!
+    @IBOutlet weak var Button2: UIButton!
+    @IBOutlet weak var Button3: UIButton!
+    @IBOutlet weak var Button4: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let requestParameters = ["fields": "id, email, first_name, last_name"]
-        
-        let userDetails = FBSDKGraphRequest(graphPath: "me", parameters: requestParameters)
-        
-        userDetails.startWithCompletionHandler { (connection, result, error:NSError!) -> Void in
-            
-            if(error != nil)
-            {
-                print("\(error.localizedDescription)")
-                return
-            }
-            
-            if(result != nil)
-            {
-                
-                let userId:String? = result["id"] as? String
-                self.firstName.text = (result["first_name"] as? String)!
-                self.lastName.text = (result["last_name"] as? String)!
-                //self.userEmail = (result["email"] as? String)!
-                
-                self.profilePic.profileID = userId
-                self.profilePic.setNeedsImageUpdate()
-                
-            }
-            
-        }
+        returnUserData()
 
 
         // Do any additional setup after loading the view.
     }
-
+    
+    func returnUserData()
+    {
+        let requestParameters = ["fields": "name, picture.type(large), data, url"]
+        
+        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me/taggable_friends?", parameters: requestParameters)
+        graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
+            
+            if ((error) != nil)
+            {
+                // Process error
+                print("Error: \(error)")
+            }
+            else
+            {
+                
+                let resultdict = result as! NSDictionary
+                let data : NSArray = resultdict.objectForKey("data") as! NSArray
+                
+                for i in 0..<data.count {
+                    let valueDict : NSDictionary = data[i] as! NSDictionary
+                    let name = valueDict.objectForKey("name") as! String
+                    let pictureDict = valueDict.objectForKey("picture") as! NSDictionary
+                    let pictureData = pictureDict.objectForKey("data") as! NSDictionary
+                    let pictureURL = pictureData.objectForKey("url") as! String
+                    
+                    let friend = person(name: name, pic: pictureURL)
+                    
+                    self.friends.append(friend)
+                    
+                }
+                
+            }
+        })
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        loadQuiz()
+        
+    }
+    
+    
+    func loadQuiz(){
+        
+        //generate random numbers for pic
+        var randArray: [Int] = []
+        
+        for var i = 0; i < 4; ++i{
+            randArray.append(Int(arc4random_uniform(UInt32(self.friends.count))))
+        }
+        
+        randArray.append(Int(arc4random_uniform(4)))
+        
+        for var i = 0; i < 4; ++i{
+            for var j = i+1; j < 4; ++j{
+                if (randArray[i] == randArray[j]){
+                    loadQuiz()
+                }
+            }
+        }
+        
+        //load ProfilePic
+        let url = NSURL(string:self.friends[randArray[randArray[4]]].pic)
+        data = NSData(contentsOfURL:url!)
+        if data != nil {
+            profilePic?.image = UIImage(data:data!)
+        }
+        
+    }
+    
+    
+    override func viewDidLayoutSubviews() {
+        if data != nil {
+            profilePic.image = UIImage(data:data!)
+        }
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
