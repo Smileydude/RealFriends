@@ -20,6 +20,8 @@
 		E2B09F5A1BA8A853007D1EFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2B09F581BA8A853007D1EFC /* LaunchScreen.storyboard */; };
 		E2B09F651BA8A853007D1EFC /* Real_Friends_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B09F641BA8A853007D1EFC /* Real_Friends_Tests.swift */; };
 		E2B09F701BA8A853007D1EFC /* Real_Friends_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B09F6F1BA8A853007D1EFC /* Real_Friends_UITests.swift */; };
+		E2CF5E7F1BB38D9000D5BB9C /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E2CF5E7D1BB38D9000D5BB9C /* CoreData.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
+		E2CF5E831BB39DCD00D5BB9C /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CF5E821BB39DCD00D5BB9C /* HistoryTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		E2B09F6B1BA8A853007D1EFC /* Real Friends?UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Real Friends?UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2B09F6F1BA8A853007D1EFC /* Real_Friends_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Real_Friends_UITests.swift; sourceTree = "<group>"; };
 		E2B09F711BA8A853007D1EFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2CF5E7E1BB38D9000D5BB9C /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
+		E2CF5E821BB39DCD00D5BB9C /* HistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,8 +125,10 @@
 				E2B09F4F1BA8A853007D1EFC /* AppDelegate.swift */,
 				E2B09F511BA8A853007D1EFC /* ViewController.swift */,
 				E2B09F531BA8A853007D1EFC /* Main.storyboard */,
+				E2CF5E821BB39DCD00D5BB9C /* HistoryTableViewController.swift */,
 				E2B09F561BA8A853007D1EFC /* Assets.xcassets */,
 				E2B09F581BA8A853007D1EFC /* LaunchScreen.storyboard */,
+				E2CF5E7D1BB38D9000D5BB9C /* CoreData.xcdatamodeld */,
 				E2B09F5B1BA8A853007D1EFC /* Info.plist */,
 			);
 			path = "Real Friends?";
@@ -276,8 +282,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2CF5E831BB39DCD00D5BB9C /* HistoryTableViewController.swift in Sources */,
 				E2A653611BAB129B003E8203 /* MainMenuViewController.swift in Sources */,
 				E2A6536B1BACF6C4003E8203 /* friendStruct.swift in Sources */,
+				E2CF5E7F1BB38D9000D5BB9C /* CoreData.xcdatamodeld in Sources */,
 				E2A653691BAC591A003E8203 /* MainGameViewController.swift in Sources */,
 				E2B09F521BA8A853007D1EFC /* ViewController.swift in Sources */,
 				E2B09F501BA8A853007D1EFC /* AppDelegate.swift in Sources */,
@@ -534,6 +542,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E2CF5E7D1BB38D9000D5BB9C /* CoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E2CF5E7E1BB38D9000D5BB9C /* CoreData.xcdatamodel */,
+			);
+			currentVersion = E2CF5E7E1BB38D9000D5BB9C /* CoreData.xcdatamodel */;
+			path = CoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E2B09F441BA8A852007D1EFC /* Project object */;
 }

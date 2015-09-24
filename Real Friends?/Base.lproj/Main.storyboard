@@ -137,10 +137,23 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cj5-EQ-lT2">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="History"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="176" y="654" width="50" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="xty-cO-Cpe" kind="show" id="H1E-7X-8N0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="WrF-Pb-bui" firstAttribute="centerX" secondItem="fBU-RR-8Nx" secondAttribute="centerX" id="6rN-Zw-7Jt"/>
+                            <constraint firstItem="Cj5-EQ-lT2" firstAttribute="top" secondItem="PkT-rC-G8y" secondAttribute="bottom" constant="22" id="8Fn-HZ-Vik">
+                                <variation key="heightClass=regular-widthClass=compact" constant="15"/>
+                            </constraint>
                             <constraint firstItem="Kav-5H-bWD" firstAttribute="top" secondItem="PkT-rC-G8y" secondAttribute="bottom" constant="194" id="BCl-O5-kId">
                                 <variation key="heightClass=regular-widthClass=compact" constant="161"/>
                             </constraint>
@@ -149,6 +162,7 @@
                             <constraint firstItem="qrY-yS-sPc" firstAttribute="centerX" secondItem="fBU-RR-8Nx" secondAttribute="centerX" id="M69-pn-CiO"/>
                             <constraint firstItem="ofo-bO-QYz" firstAttribute="centerX" secondItem="fBU-RR-8Nx" secondAttribute="centerX" id="c1M-Or-6WE"/>
                             <constraint firstItem="qrY-yS-sPc" firstAttribute="top" secondItem="WrF-Pb-bui" secondAttribute="bottom" constant="8" id="hFi-r6-cUm"/>
+                            <constraint firstItem="Cj5-EQ-lT2" firstAttribute="centerX" secondItem="PkT-rC-G8y" secondAttribute="centerX" id="khL-xB-SQM"/>
                             <constraint firstItem="ofo-bO-QYz" firstAttribute="top" secondItem="FOf-G3-c1o" secondAttribute="bottom" constant="71" id="lO9-Wo-6Ed"/>
                             <constraint firstAttribute="trailingMargin" secondItem="c5Y-up-VZ0" secondAttribute="trailing" constant="10" id="uEV-Ld-wfU"/>
                             <constraint firstItem="c5Y-up-VZ0" firstAttribute="top" secondItem="FOf-G3-c1o" secondAttribute="bottom" constant="20" id="uY0-hT-ClR"/>
@@ -160,18 +174,21 @@
                                 <exclude reference="ofo-bO-QYz"/>
                                 <exclude reference="PkT-rC-G8y"/>
                                 <exclude reference="qrY-yS-sPc"/>
+                                <exclude reference="Cj5-EQ-lT2"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="BCl-O5-kId"/>
-                                <exclude reference="CUg-A7-mkI"/>
+                                <exclude reference="c1M-Or-6WE"/>
+                                <exclude reference="lO9-Wo-6Ed"/>
                                 <exclude reference="uEV-Ld-wfU"/>
                                 <exclude reference="uY0-hT-ClR"/>
                                 <exclude reference="6rN-Zw-7Jt"/>
                                 <exclude reference="Hhi-QR-68E"/>
                                 <exclude reference="M69-pn-CiO"/>
                                 <exclude reference="hFi-r6-cUm"/>
-                                <exclude reference="c1M-Or-6WE"/>
-                                <exclude reference="lO9-Wo-6Ed"/>
+                                <exclude reference="CUg-A7-mkI"/>
+                                <exclude reference="8Fn-HZ-Vik"/>
+                                <exclude reference="khL-xB-SQM"/>
+                                <exclude reference="BCl-O5-kId"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -181,18 +198,21 @@
                                 <include reference="ofo-bO-QYz"/>
                                 <include reference="PkT-rC-G8y"/>
                                 <include reference="qrY-yS-sPc"/>
+                                <include reference="Cj5-EQ-lT2"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="BCl-O5-kId"/>
-                                <include reference="CUg-A7-mkI"/>
+                                <include reference="c1M-Or-6WE"/>
+                                <include reference="lO9-Wo-6Ed"/>
                                 <include reference="uEV-Ld-wfU"/>
                                 <include reference="uY0-hT-ClR"/>
                                 <include reference="6rN-Zw-7Jt"/>
                                 <include reference="Hhi-QR-68E"/>
                                 <include reference="M69-pn-CiO"/>
                                 <include reference="hFi-r6-cUm"/>
-                                <include reference="c1M-Or-6WE"/>
-                                <include reference="lO9-Wo-6Ed"/>
+                                <include reference="CUg-A7-mkI"/>
+                                <include reference="8Fn-HZ-Vik"/>
+                                <include reference="khL-xB-SQM"/>
+                                <include reference="BCl-O5-kId"/>
                             </mask>
                         </variation>
                     </view>
@@ -318,16 +338,41 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="Button1" destination="Ijl-HN-Yx7" id="szn-wW-pCc"/>
-                        <outlet property="Button2" destination="5lF-H8-zVu" id="1lm-hf-Iky"/>
-                        <outlet property="Button3" destination="QhZ-PQ-0rK" id="12N-Jl-pq3"/>
-                        <outlet property="Button4" destination="lXU-FU-ADi" id="zCz-XR-kRa"/>
                         <outlet property="profilePic" destination="6Vh-9B-g9a" id="AxN-OK-6oZ"/>
+                        <outletCollection property="nameButtons" destination="Ijl-HN-Yx7" collectionClass="NSMutableArray" id="gMj-kf-bpo"/>
+                        <outletCollection property="nameButtons" destination="5lF-H8-zVu" collectionClass="NSMutableArray" id="sYk-S5-fHt"/>
+                        <outletCollection property="nameButtons" destination="QhZ-PQ-0rK" collectionClass="NSMutableArray" id="Y5c-Lf-pwh"/>
+                        <outletCollection property="nameButtons" destination="lXU-FU-ADi" collectionClass="NSMutableArray" id="fES-fa-sXJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KzW-4j-DNS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1198.5" y="1437.75"/>
+            <point key="canvasLocation" x="1198.5" y="1442.25"/>
+        </scene>
+        <!--History Table View Controller-->
+        <scene sceneID="pEI-LW-I3R">
+            <objects>
+                <tableViewController id="xty-cO-Cpe" customClass="HistoryTableViewController" customModule="Real_Friends_" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="S5t-K3-4EV">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="wgS-OW-VVr">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wgS-OW-VVr" id="sde-72-0CJ">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="xty-cO-Cpe" id="cgQ-2C-qM2"/>
+                            <outlet property="delegate" destination="xty-cO-Cpe" id="eaY-gn-EsD"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6BU-8q-bLr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1198.5" y="2163"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xIL-Ms-bcs">

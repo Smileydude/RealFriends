@@ -9,6 +9,8 @@
 import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
+import CoreData
+
 
 class MainGameViewController: UIViewController {
     
@@ -16,10 +18,9 @@ class MainGameViewController: UIViewController {
     var data: NSData?
     @IBOutlet weak var profilePic: UIImageView!
     
-    @IBOutlet weak var Button1: UIButton!
-    @IBOutlet weak var Button2: UIButton!
-    @IBOutlet weak var Button3: UIButton!
-    @IBOutlet weak var Button4: UIButton!
+    @IBOutlet var nameButtons: Array<UIButton> = []
+    
+    
     
     
     override func viewDidLoad() {
@@ -99,6 +100,42 @@ class MainGameViewController: UIViewController {
         if data != nil {
             profilePic?.image = UIImage(data:data!)
         }
+        
+        //set button names
+        for var i = 0; i < 4; ++i {
+            nameButtons[i].tag = randArray[randArray[4]]
+            nameButtons[i].setTitle(self.friends[randArray[i]].name, forState: .Normal)
+            nameButtons[i].addTarget(self, action: "buttonPressed:", forControlEvents: .TouchUpInside)
+        }
+        
+    }
+    
+    func buttonPressed(sender: UIButton!) {
+        
+        if (sender.currentTitle! == self.friends[sender.tag].name){
+            //correct
+            loadQuiz()
+            //TODO: correct Animation
+        }
+        else{
+            loadQuiz()
+            //Incorrect
+            //TODO: Save Incorrect
+            save(self.friends[sender.tag].name)
+            //TODO: incorrect Animation
+        }
+        
+    }
+    
+    //saves name of person
+    func save(Name: String){
+        let appDel:AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
+        let context:NSManagedObjectContext = appDel.managedObjectContext
+        
+        let newPerson = NSEntityDescription.insertNewObjectForEntityForName("Unknown", inManagedObjectContext: context) as NSManagedObject
+        
+        newPerson.setValue(Name, forKey: "name")
+        
         
     }
     
